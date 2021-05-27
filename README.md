@@ -9,7 +9,7 @@
 > Componenent of react <br>
 > - Functional <br>
 > - Class Based <br>
-    - when we need to store data then we use classbased 
+>   - when we need to store data then we use classbased 
 > React component starts with capital latter <br>
 > export used to export a data to another file <br>
 > import used to import a another file <br>
