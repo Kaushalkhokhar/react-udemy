@@ -28,6 +28,7 @@ i.e NewExpense.js, Expense.js
 - JSX can also do dynamic style<br>
 i.e CharBar.js
 - when code does not give expected output then first see the terminal to see fix <br>the errors.
+- CSS: if no space between two classes in css then it means both is applied to same <br>element i.e CourseInput.css
 
 
 
