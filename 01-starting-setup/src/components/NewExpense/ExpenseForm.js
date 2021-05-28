@@ -49,11 +49,11 @@ const ExpenseForm = (props) => {
     };
 
     const submitHandler = (event) => {
-        event.preventDefault();
+        event.preventDefault();// To abort default settings like loading page again 
 
         const expenseData = {
             title: enteredTitle,
-            amount: enteredAmount,
+            amount: +enteredAmount,
             date: new Date(enteredDate)
         }
 
@@ -62,6 +62,11 @@ const ExpenseForm = (props) => {
         setEnteredAmount('');
         setEnteredDate('')
     }
+
+    // const cancelClickHandler = () => {
+    //     props.cancel();
+    // } 
+    // insted use direct ro click button
 
     return <form onSubmit={submitHandler}>
         <div className="new-expense__controls">
@@ -93,6 +98,7 @@ const ExpenseForm = (props) => {
         </div>
 
         <div className="new-expense__actions">
+            <button type="button" onClick={props.cancel}>Cancel</button>
             <button type="submit">Add Expense</button>
         </div>
     </form>
