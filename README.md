@@ -48,9 +48,10 @@ i.e CharBar.js <br>
 - For good deveoper we need to **find and debug** errors by own. 
 - Don't Panic 
     - Read the error mesaage 
-    - See the file from which it comes <br> 
-    - And go to that file and line <br>
-
+    - See the file from which it comes 
+    - And go to that file and line 
+- Use consol to see the errors and waring.
+- Use browser developer to bebug the code using tag/pointer to debug step buy step.
 
 
 
