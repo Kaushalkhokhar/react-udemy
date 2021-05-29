@@ -54,6 +54,31 @@ i.e CharBar.js <br>
 - Use browser developer to bebug the code using tag/pointer to debug step buy step.
 - React developement tool is really usefull to analysing and debugging the code.
 
+### Fragments, Portal and wraps
+- wrapper is used to avoid unwanted nested div. It does not render anthing <br>but only used to trick to follow a rule of only one main element in JSX <br>i.e MyForm.js in PracticeProject
+- Fragments
+    - Used to avoid unnecessry div elements. 
+    - Two method
+        - <> ...</>
+        - <React.Fragment>....</React.Fragment>
+        - i.e App.js on practice project
+- Portals
+    - To allow Custom JSX to place where it shold be
+    - To work with portals we need to add extra div to pulic > index.html
+        - i.e public > index.html in PracticeProject
+    - And to use that see ErrorModal.js
+        - i.e {ReactDOM.createPortal( <br>
+                <Backdrop onConfirm={props.onConfirm} />, <br>
+                document.getElementById("backdrop-root") <br>
+            )}
+- Refs
+    - They allow to access dom elements.
+    - With Refs we set up a connection between a HTML elements(JSX) and other <br>javaScript code
+    - ref can be pass to any html element
+    - it gives object which hold the current properties of element connected<br> with
+    - So ref is dom object, we can manipulate as per need. but do this <br>**rarely, very rarely** if needed
+    - i.e MyForm.js in PracticeProject
+
 
 
 

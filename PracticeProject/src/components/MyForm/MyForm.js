@@ -1,26 +1,22 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Card from "../UI/Card";
 import Button from "../UI/Button";
 import ErrorModal from "../UI/ErrorModal";
+import Wrapper from "../Helpers/Wrapper";
 
 import classes from "./MyForm.module.css";
 
 const MyForm = (props) => {
-  const [formUserName, setFormUsername] = useState("");
-  const [formAge, setFormAge] = useState("");
+  const nameInputRef = useRef();
+  const ageInputRef = useRef();
+
   const [error, setError] = useState();
-
-  const UsernameHandler = (event) => {
-    setFormUsername(event.target.value);
-  };
-
-  const AgeHandler = (event) => {
-    setFormAge(event.target.value);
-  };
 
   const FormSubmitHandler = (event) => {
     event.preventDefault();
-    if (formUserName.trim().length === 0 || formAge.trim().length === 0) {
+    const EnteredName = nameInputRef.current.value;
+    const EnteredAge = ageInputRef.current.value;
+    if (EnteredName.trim().length === 0 || EnteredAge.trim().length === 0) {
       setError({
         title: "Empty Field",
         message: "Please enter a username and age.Do not left blank",
@@ -28,7 +24,7 @@ const MyForm = (props) => {
       return;
     }
     // Here a + sign is for identifying it as a number not string
-    if (+formAge < 1) {
+    if (+EnteredAge < 1) {
       setError({
         title: "Invalid age",
         message: "Please enter valid age(>0)",
@@ -36,10 +32,11 @@ const MyForm = (props) => {
       return;
     }
 
-    props.onSaveForm(formUserName, formAge);
-
-    setFormUsername("");
-    setFormAge("");
+    props.onSaveForm(EnteredName, EnteredAge);
+    // we should not do this more ofenly
+    // use rarely to manipulate dom by useRef
+    nameInputRef.current.value = '';
+    ageInputRef.current.value = '';
   };
 
   const errorHandler = () => {
@@ -47,7 +44,7 @@ const MyForm = (props) => {
   };
 
   return (
-    <div>
+    <Wrapper>
       {error && (
         <ErrorModal
           title={error.title}
@@ -61,15 +58,17 @@ const MyForm = (props) => {
           <label>Username</label>
           <input
             type="text"
-            value={formUserName}
-            onChange={UsernameHandler}
+            ref={nameInputRef}
           ></input>
           <label>Age (Years)</label>
-          <input type="number" value={formAge} onChange={AgeHandler}></input>
+          <input
+            type="number"
+            ref={ageInputRef}
+          ></input>
           <Button type="submit">Add user</Button>
         </form>
       </Card>
-    </div>
+    </Wrapper>
   );
 };
 

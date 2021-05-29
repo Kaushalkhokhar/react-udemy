@@ -19,10 +19,10 @@ const App = () => {
   // console.log(validFlag );
 
   return (
-    <div>
+    <React.Fragment>
       <MyForm onSaveForm={getFormData} />
       <UserList users={updatedUser} />
-    </div>
+    </React.Fragment>
   );
 };
 
