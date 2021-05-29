@@ -1,6 +1,6 @@
 ## React Notes from udemy
 
-### 01-starting-setup
+### React Basics
 - Complonent spliting is importanat. when there are much element or code in a single <br>
 component just split it to other part
 - To change the value of rendered element we need to use state <br>
@@ -52,6 +52,7 @@ i.e CharBar.js <br>
     - And go to that file and line 
 - Use consol to see the errors and waring.
 - Use browser developer to bebug the code using tag/pointer to debug step buy step.
+- React developement tool is really usefull to analysing and debugging the code.
 
 
 
