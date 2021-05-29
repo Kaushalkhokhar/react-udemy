@@ -47,7 +47,7 @@ i.e CharBar.js <br>
 ### Error Understading and debugging
 - For good deveoper we need to **find and debug** errors by own. <br>
 - Don't Panic <br>
-    - Read the error mesaage <br>
+    - Read the error mesaage 
     - See the file from which it comes <br> 
     - And go to that file and line <br>
 
