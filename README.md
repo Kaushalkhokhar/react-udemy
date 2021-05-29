@@ -3,16 +3,18 @@
 ### React Basics
 - Complonent spliting is importanat. when there are much element or code in a single <br>
 component just split it to other part
-- To change the value of rendered element we need to use state <br>
-i.e ExpenseForm.js, App.js
-- To change the state-value depending apon previous state we need to use <br>
-    function as an argument in state-changing-function <br> 
-    i.e App.js <br>
-    i.e const [stateVariable, setStateVariable ] = useState('Inittial value') <br>
-        setStateVariable( argue => {<br>
-            ...argue,<br>
-            extraArgu: some-more-data<br>
-        })<br>
+- About State:
+    - To change the value of rendered element we can use state <br>
+    i.e ExpenseForm.js, App.js
+    - To change the state-value depending apon previous state we need to use <br>
+        function as an argument in state-changing-function <br> 
+        i.e App.js <br>
+        i.e const [stateVariable, setStateVariable ] = useState('Inittial value') <br>
+            setStateVariable( argue => {<br>
+                ...argue,<br>
+                extraArgu: some-more-data<br>
+            })
+    - **Note:** When state funciton runs it reloads componet(JSX) function
 <br>
 - To tranfer a values from one component to other component we use props to pass <br>function pointer to children component and then we call the function in children <br> component and pass an data as an arguments. so that data/argument can be used in <br>parent component to do whatever we want.<br>
 i.e NewExpense.js -> saveExpenseFormHandler
@@ -79,9 +81,30 @@ i.e CharBar.js <br>
     - So ref is dom object, we can manipulate as per need. but do this <br>**rarely, very rarely** if needed
     - i.e MyForm.js in PracticeProject
 
+- Note: Form field like input is tagged with 
+    - Ref then it is **uncontrolled component**.
+        - beacase we do not controll the input field by React
+        - instead we just read the value
+    - State then it is **controlled components**
+          - becase we control the state of input by passing value
 
 
+### Side Effect, Reducers, Context
 
+- Effect/Side Effect
+    - Side Effects can be like
+        - Sending HTTP Request
+        - Manage Timers
+        - Send data to browser storage
+    - So it is always placed outside of React functions
+    - so we have useEffect() Hook
+        - it runs when first time componenet loads then
+        - it runs(executes firstargue) when dependecies(second argue) changes
+    - It basically avoids infinite looping.
+    - **Important Note:** Use Case of useEffect()
+        - When we want to run a state-update-function without any event like <br>onchange, onclick, etc. Means we want to run state-update-function<br>directly inside react component function, at that time we need to<br>use useEffect() to avoid infinite looping
+        <br>i.e App.js and Login.js in LoginAndLogout project
+    - Dependencies can be defined by function parameter used in useEffect <br>function. i.e Login.js in LoginAndLogout project
 
 
 
