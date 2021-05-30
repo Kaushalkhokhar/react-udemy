@@ -118,7 +118,7 @@
     <br>
     <br>
     <br>
-  - Reducer Example
+  - Reducer Example<br>
     const emailReducer = (state, action) => { <br>
         if (action.type === "USER_INPUT") { <br>
         return { value: action.val, isValid: action.val.includes("@") }; <br>
@@ -138,3 +138,31 @@
         are passed as 'action' in emailReducer
       - emailReducer -> returns the updated state/object to be stored
         in emailState. 'state' argue in emailReducer holds the previous-state snapshot
+
+        Adding Nested Properties As Dependencies To useEffect
+
+- when useState and useReducer
+    - useState is used when
+        - the main sate management "tools"
+        - Great for independent pieace of state/data
+        - Great if state updates are easy and limited to a few kinds of upates
+    - UseReducer is used when
+        - Great if you need "more power"
+        - Should be considered if youo have related pieces fo state.data
+        Can be helpful if you have more complex state upadtes
+    - **Note:** There is no hardcore rule for this. it just a reference
+
+- Context
+    - In some cases to forward a props without needing it but just passed/forwarded to following compenents. 
+    -  In above case we neeed **context** without using a prop chain 
+    - i.e navigation.js in LoginAndLogout project
+    - Limtations:
+        - "props" for cofiguration and "context" for state-managemant across <br>components
+        - React "context" can not be used for high frequency changes!
+
+- forwardRef
+  - Used when we want to expose/forward a data, like function, value or anything that we want, to parent component and we can use that with ref and trigger some fucntionality
+  - this is not preferable at any cost
+  - avoid using this and find some alternative solution
+  - Focusing and input is very realistic use case for forwardRef
+  - i.e Input.js in LoginAndLogout project
