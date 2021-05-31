@@ -2,7 +2,7 @@
 
 ### React Basics
 
-- Complonent spliting is importanat. when there are much element or code in a single <br>
+- Component spliting is importanat. when there are much element or code in a single <br>
   component just split it to other part
 - About State: - To change the value of rendered element we can use state <br>
   i.e ExpenseForm.js, App.js - To change the state-value depending apon previous state we need to use <br>
@@ -74,8 +74,7 @@
       document.getElementById("backdrop-root") <br>
       )}
 - Refs
-
-  - They allow to access dom elements.
+  - They allow to access DOM elements.
   - With Refs we set up a connection between a HTML elements(JSX) and other <br>javaScript code
   - ref can be pass to any html element
   - it gives object which hold the current properties of element connected<br> with
@@ -161,7 +160,8 @@
         - React "context" can not be used for high frequency changes!
 
 - forwardRef
-  - Used when we want to expose/forward a data, like function, value or anything that we want, to parent component and we can use that with ref and trigger some fucntionality
+  - When ref assign to component forwardRef is used to pass that ref to one of children. This is specially needed for reusable component library like button, input, card etc..
+  - Used w`hen we want to expose/forward a data, like function, value or anything that we want, to parent component and we can use that with ref and trigger some fucntionality
   - this is not preferable at any cost
   - avoid using this and find some alternative solution
   - Focusing and input is very realistic use case for forwardRef
