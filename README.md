@@ -12,37 +12,33 @@
   setStateVariable( argue => {<br>
   ...argue,<br>
   extraArgu: some-more-data<br>
-  }) - **Note:** When state funciton runs it reloads componet(JSX) function
-  <br>
-- To tranfer a values from one component to other component we use props to pass <br>function pointer to children component and then we call the function in children <br> component and pass an data as an arguments. so that data/argument can be used in <br>parent component to do whatever we want.<br>
-  i.e NewExpense.js -> saveExpenseFormHandler
-  <br>
-
-- To map a list of item we use {items.map( item => { create an element here })} <br>
-- When we map a list of item we need to specify a unique-key to each item to identify <br> each item in a unique way. it is for react not for us..<br>
+  })
+  - **Note:** When state funciton runs it reloads componet(JSX) function
+    
+- To tranfer a values from one component to other component we use props to pass function pointer to children component and then we call the function in children  component and pass an data as an arguments. so that data/argument can be used in parent component to do whatever we want.<br>  i.e NewExpense.js -> saveExpenseFormHandler
+- To map a list of item we use {items.map( item => { create an element here })} 
+- When we map a list of item we need to specify a unique-key to each item to identify  each item in a unique way. it is for react not for us..
   i.e ExpenseList.js
-  <br>
+  
 
-- JSX code can be written out of return as in Expense.js <br>
-- When we need to load components data on condition use conditional loading method<br>
-  i.e NewExpense.js, Expense.js <br>
-- JSX can also do dynamic style<br>
-  i.e CharBar.js <br>
-- when code does not give expected output then first see the terminal to see fix <br>the errors.
+- JSX code can be written out of return as in Expense.js 
+- When we need to load components data on use conditional loading method i.e NewExpense.js, Expense.js 
+- JSX can also do dynamic style i.e CharBar.js 
+- when code does not give expected output then first see the terminal to see fix the errors.
 
 ### CSS dynamic styling
 
-- CSS: if no space between two classes in css then it means both is applied to same <br>element i.e CourseInput.css <br>
-- template literals also works in same as javaScipt i.e CourseInput.js <br>
-- Styled Componenet is package to style perticular component, insted of styling to all the <br>components. To install it in project file -> npm install --save sytyled-components <br>
-- special javaScirpt method is used as styled.button``. It is javaScript method not <br>styled-component method. i.e Button.js<br>
-- There can be two component in one file, one for jsx and second for styled component <br> i.e CourseInput.js <br>
-- Media Query can be added directly to styled components. i.e Button.js <br>
-- CSS module is used to give unique classname to elements and separate our JSX component <br>and CSS files. These is preferd way to do it. <br>
-- We can call CSS selector in two different way in CSS modules <br>
-  - styles.<name-of-selector> <br>
-  - styles['<name-of-selector>'] <br>
-- Media Query in CSS module is same as normal CSS. i.e Button.module.css <br>
+- CSS: if no space between two classes in css then it means both is applied to same element i.e CourseInput.css 
+- template literals also works in same as javaScipt i.e CourseInput.js 
+- Styled Componenet is package to style perticular component, insted of styling to all the components. To install it in project file -> npm install --save sytyled-components 
+- special javaScirpt method is used as styled.button``. It is javaScript method not styled-component method. i.e Button.js
+- There can be two component in one file, one for jsx and second for styled component  i.e CourseInput.js 
+- Media Query can be added directly to styled components. i.e Button.js 
+- CSS module is used to give unique classname to elements and separate our JSX component and CSS files. These is preferd way to do it. 
+- We can call CSS selector in two different way in CSS modules 
+  - styles.<name-of-selector> 
+  - styles['<name-of-selector>'] 
+- Media Query in CSS module is same as normal CSS. i.e Button.module.css 
 
 ### Error Understading and debugging
 
@@ -74,6 +70,7 @@
       document.getElementById("backdrop-root") <br>
       )}
 - Refs
+
   - They allow to access DOM elements.
   - With Refs we set up a connection between a HTML elements(JSX) and other <br>javaScript code
   - ref can be pass to any html element
@@ -101,9 +98,8 @@
     - it runs(executes firstargue) when dependecies(second argue) changes
   - It basically avoids infinite looping.
   - **Important Note:** Use Case of useEffect()
-    - When we want to run a state-update-function without any event like <br>onchange, onclick, etc. Means we want to run state-update-function<br>directly inside react component function, at that time we need to<br>use useEffect() to avoid infinite looping
-      <br>i.e App.js and Login.js in LoginAndLogout project
-  - Dependencies can be defined by function parameters used in useEffect <br>function. i.e Login.js in LoginAndLogout project
+    - When we want to run a state-update-function without any event like  onchange, onclick, etc. Means we want to run state-update-function directly inside react component function, at that time we need to use useEffect() to avoid infinite looping. i.e App.js and Login.js in LoginAndLogout project
+  - Dependencies can be defined by function parameters used in useEffect function. i.e Login.js in LoginAndLogout project
   - **About Debouncing:** Use case:
     - We want to run a useeffct function in email and password change but after waiting to 500ms from last key press.
     - This can increase performance of code by not requestin on every key press
@@ -113,25 +109,27 @@
 
   - used for more complex states managements
   - can be used as replacement of useState. But only if needed
-  - used when state-updates depends on other states. But that should not <br>be done directly using sate-update. Beacause it produces bug/error <br>somtimes. even we can't use function in state-update because it is <br>available only for preState of it self, not of other state. This is use case fo **useRecucer** where state-update depends on other states.
-    <br>
-    <br>
-    <br>
+  - used when state-updates depends on other states. But that should not be done directly using sate-update. Beacause it produces bug/error somtimes. even we can't use function in state-update because it is available only for preState of it self, not of other state. This is use case fo **useRecucer** where state-update depends on other states.
+    
+    
+    
   - Reducer Example<br>
     const emailReducer = (state, action) => { <br>
-        if (action.type === "USER_INPUT") { <br>
-        return { value: action.val, isValid: action.val.includes("@") }; <br>
-        } <br>
-        if (action.type === "INPUT_BLUR") { <br>
-        return { value: state.value, isValid: state.value.includes("@") }; <br>
-        } <br>
-        return { value: "", isValid: false }; <br>
-        }; <br>
+    if (action.type === "USER_INPUT") { <br>
+    return { value: action.val, isValid: action.val.includes("@") }; <br>
+    } <br>
+    if (action.type === "INPUT_BLUR") { <br>
+    return { value: state.value, isValid: state.value.includes("@") }; <br>
+    } <br>
+    return { value: "", isValid: false }; <br>
+    }; <br>
     const [emailState, dispatchEmail] = useReducer(emailReducer, {
-        <br>value: "",
-        <br>isValid: null,<br>
-        });
+    <br>value: "",
+    <br>isValid: null,<br>
+    });
+
     - Diving to parameters
+
       - emailState -> holds the current state values/variables
       - dispathEmail -> executes a emailReducer funnction and argus
         are passed as 'action' in emailReducer
@@ -141,23 +139,25 @@
         Adding Nested Properties As Dependencies To useEffect
 
 - when useState and useReducer
-    - useState is used when
-        - the main sate management "tools"
-        - Great for independent pieace of state/data
-        - Great if state updates are easy and limited to a few kinds of upates
-    - UseReducer is used when
-        - Great if you need "more power"
-        - Should be considered if youo have related pieces fo state.data
-        Can be helpful if you have more complex state upadtes
-    - **Note:** There is no hardcore rule for this. it just a reference
+
+  - useState is used when
+    - the main sate management "tools"
+    - Great for independent pieace of state/data
+    - Great if state updates are easy and limited to a few kinds of upates
+  - UseReducer is used when
+    - Great if you need "more power"
+    - Should be considered if youo have related pieces fo state.data
+      Can be helpful if you have more complex state upadtes
+  - **Note:** There is no hardcore rule for this. it just a reference
 
 - Context
-    - In some cases to forward a props without needing it but just passed/forwarded to following compenents. 
-    -  In above case we neeed **context** without using a prop chain 
-    - i.e navigation.js in LoginAndLogout project
-    - Limtations:
-        - "props" for cofiguration and "context" for state-managemant across <br>components
-        - React "context" can not be used for high frequency changes!
+
+  - In some cases to forward a props without needing it but just passed/forwarded to following compenents.
+  - In above case we neeed **context** without using a prop chain
+  - i.e navigation.js in LoginAndLogout project
+  - Limtations:
+    - "props" for cofiguration and "context" for state-managemant across <br>components
+    - React "context" can not be used for high frequency changes!
 
 - forwardRef
   - When ref assign to component forwardRef is used to pass that ref to one of children. This is specially needed for reusable component library like button, input, card etc..
@@ -166,3 +166,17 @@
   - avoid using this and find some alternative solution
   - Focusing and input is very realistic use case for forwardRef
   - i.e Input.js in LoginAndLogout project
+
+
+### How React work behind the scene
+
+- React.memo();
+  - Used when we want to stop execution of specific children component at sate change on current component for **performance oprimization**
+  - when component having a long chain of children and has frequent state change then we can use this.
+  - Limitation
+    - This works only for primitive values like number, string, boolens etc
+    - but for reference values like arrays, function it does not work as per expectation **so what?**
+  - Solution is **useCallback()**
+    - wrap the function with useCallback() and also give dependencies like in the same way/rules as useEffect().
+    - and then wrap a children with Reat.memo() to which it is passed.
+    - **Note:** If wrapped function contains a variable which value depends on outside of funciton parameter then that varable must be as dependencies for useCallback()
