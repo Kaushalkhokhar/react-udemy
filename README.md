@@ -226,3 +226,23 @@
     - wrap the function with useCallback() and also give dependencies like in the same way/rules as useEffect().
     - and then wrap a children with Reat.memo() to which it is passed.
     - **Note:** If wrapped function contains a variable which value depends on outside of funciton parameter then that varable must be as dependencies for useCallback()
+
+### Custom Hooks
+
+- Ahout:
+  - It is basically a function which contains a states.
+  - It is used to create a repeative states used for different components.
+  - Custom hook function must start with 'use' string 
+  - It can return anything, that is required in component funciton in which we call
+  - When state specified in custom hooks will bind to the component in whick it is called. Means when state changes in custom hook then component function, in which custom hook is used, will re-render not custom hook it-self
+
+  - **Learning from CustomHttphook**
+    - While we refactor a code see what is common, which can be sepated in one file and used
+    - The part which is specific to component should be kept as it is.
+    - When we want to pass some data to other file then use function and pass data as arguments. And return a function pointer, means reference of that function. 
+    - useEffect and useCallback dependencies
+      - Include everything which comes from outside. 
+      - javaSript API's, localstorage, fetch(), timer, state-functions etc..
+      - For useCallback arguments passed to the wrapeed function is not dependency for it.
+      - When we pass a function as a dependecies then wrapp that function with useCallback to avoid infinite looping.
+  
