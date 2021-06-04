@@ -246,3 +246,18 @@
       - For useCallback arguments passed to the wrapeed function is not dependency for it.
       - When we pass a function as a dependecies then wrapp that function with useCallback to avoid infinite looping.
   
+  ### Forms and Input 
+  - Form Validation check can be
+    - when form is submitted/onSubmit
+    - when input losing focus/onBlur
+    - on every keystroke/onChange
+  - **Important Note** 
+    - Don't use state variable in the function in which state-change-function is runs. because state wan't change imidieatly. It will be upadated as schedule
+  - **Formik** is popular third party library for more forms logics
+
+  ### Practice Project
+
+  - Problem Statment
+    - form : name and adress on clicking order
+    - validate form and send form data to backend -> post
+    - fetchmeals data -> get
