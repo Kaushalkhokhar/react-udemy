@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { counterSlice } from './counter-redux';
-import { authSlice } from './auth-slice';
+import { counterSlice } from './counter-redux'; // Here we dont have defalut import
+import authSlice  from './auth-slice'; // Here we have import defalut export
 
 
 const store = configureStore({
