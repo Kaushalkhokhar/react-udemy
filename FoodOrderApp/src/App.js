@@ -14,7 +14,6 @@ function App() {
 
   const hideCartHandler = () => {
     setShowCart(false);
-    // setShowOrderForm(false);
   };
 
   const showOrderFormHandler = () => {

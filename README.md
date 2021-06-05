@@ -261,3 +261,27 @@
     - form : name and adress on clicking order
     - validate form and send form data to backend -> post
     - fetchmeals data -> get
+
+### Redux 
+
+- Is for state-management of whole react app
+- can be used where we want more complex context/useContext
+- can be replacement of context where high frequency changes occurs
+
+- Starting redux setup:
+  - navigate to redux folder
+  - make <redux-filename>.js
+  - npm init -y
+  - npm install redux
+    - redux is general library which with any programming library we can use. so with this we need to install another package with is and that is 
+      - npm install react-redux
+  - for importing redux
+    - const redux = require('redux')
+      - this is default node.js syntax for importing third-party libraries
+
+  - **Sidenote**
+    - To run .js file we can run with -> node <name-of-file>.js
+
+  - Redux toolkit is used to simplify redux more
+    - To install it -> npm install @reduxjs/toolkit
+
