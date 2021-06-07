@@ -285,3 +285,6 @@
   - Redux toolkit is used to simplify redux more
     - To install it -> npm install @reduxjs/toolkit
 
+  - Dont mute the states outside the reducers on redux code. Neve ever do that.
+  - **Redux Devtool** is great tool to see the flow of redux states.
+

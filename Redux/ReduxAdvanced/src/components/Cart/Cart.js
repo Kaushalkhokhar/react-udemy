@@ -4,7 +4,7 @@ import classes from "./Cart.module.css";
 import CartItem from "./CartItem";
 
 const Cart = (props) => {
-  const cartItems = useSelector((state) => state.items);
+  const cartItems = useSelector((state) => state.cart.items);
   const items = cartItems.map((item) => {
     return (
       <CartItem
