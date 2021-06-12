@@ -207,7 +207,7 @@
 
 - forwardRef
   - When ref assign to component forwardRef is used to pass that ref to one of children. This is specially needed for reusable component library like button, input, card etc..
-  - Used w`hen we want to expose/forward a data, like function, value or anything that we want, to parent component and we can use that with ref and trigger some fucntionality
+  - Used when we want to expose/forward a data, like function, value or anything that we want, to parent component and we can use that with ref and trigger some fucntionality
   - this is not preferable at any cost
   - avoid using this and find some alternative solution
   - Focusing and input is very realistic use case for forwardRef
@@ -287,4 +287,36 @@
 
   - Dont mute the states outside the reducers on redux code. Neve ever do that.
   - **Redux Devtool** is great tool to see the flow of redux states.
+
+### React Router
+
+- Needed to give experience of multipage/multiurl app in single-page-application/SPA
+- Our aim is 
+  - ourdomain.com -> loads componentA
+  - ourdomain.com/products -> loads componentB
+- We need third party library for this
+  - To install React Router -> npm instll react-router-dom
+
+- 'Route' method is used to go to the given urls
+- "BrowseRouters" is used to activate 'Route' method
+- 'Link' method is used to replace anchor tag. This will prevent the default behavior of sending and fetching a data
+  - Link and NavLink replace the "href" to 'to'
+- 'NavLink' method is used to give a class on active links 
+  - active class can be assigned by 'activeClassName'
+- :<param-name> is used to have dynamic urls
+ - useParams can be used to get dynamic params values
+- 'Switch' can be used to allow switch berween the specifeid routes
+- Nested Routes can be set in the compoenents by 'Route' method
+- 'Redirect' is used to go to specified path
+- 'useHistory' used to change the history of urls visited. So can be navigated directly to the given urls
+- '*' Selects all the urls parameters. Used to assign Not found page render
+- 'Promt' method is used to show a promt window
+  - props required
+    - when takes 'boolean' value
+    - message takes a function value
+- 'useLocation' gives a current url params.
+- Query params can be used to get extra data from the urls and based on that we can change the behaviour of page. And it is optional parameter unlike the :quoteID parameter
+- 'URLSearchParams()' used to work with query string of urls. It is javaScript Specific not react
+- 'useRouteMatch' used to assign path-values dynamically, means without hard-coding.
+
 

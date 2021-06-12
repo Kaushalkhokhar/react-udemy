@@ -71,6 +71,7 @@ export const getCartData = () => {
     };
     try {
       const data = await fetchCartData();
+      console.log(data);
       dispatch(
         cartActions.copyItem({
           items: data.items || [], // This should be done for empty cart
